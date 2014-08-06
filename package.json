@@ -1,9 +1,14 @@
 {
 	"name": "chunk-scatter",
 	"version": "0.0.1",
+	"author": "cowchimp",
 	"private": true,
 	"scripts": {
 		"start": "node ./bin/www"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cowchimp/chunk-scatter"
 	},
 	"dependencies": {
 		"express": "~4.2.0",
@@ -15,5 +20,6 @@
 		"jade": "~1.3.0",
 		"async": "~0.9.0",
 		"request": "~2.38.0"
-	}
+	},
+	"license": "MIT"
 }
