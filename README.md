@@ -28,6 +28,7 @@ Using Chunk Scatter
 3. The y-axis represents the accumulated length of the response in terms of the number of characters  
    The x-axis is simply the time in milliseconds since the request started
 4. Hover over any point and get a tooltip showing when the chunk was received and the response length at that time
+5. You can export the graph as an image by clicking the "Image" link below it
 
    See [this](http://blog.cowchimp.com/chunk-scatter-http-chunked-response-analysis-tool) blog post for more info
 
