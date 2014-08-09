@@ -1,6 +1,6 @@
 {
 	"name": "chunk-scatter",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"author": "cowchimp",
 	"private": true,
 	"scripts": {
