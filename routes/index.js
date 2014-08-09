@@ -10,7 +10,10 @@ router.get('/', function(req, res) {
 });
 
 router.post('/go', function(req, res) {
-	var endpoints = req.body;
+	var endpoints = req.body.endpoints;
+	endpoints.forEach(function(item) {
+		item.useGzip = req.body.useGzip;
+	});
 	async.map(endpoints, chunkAnalyzer.analyze, function(err, results) {
 		if(err != null) {
 			res.send(555, { error: err.message });

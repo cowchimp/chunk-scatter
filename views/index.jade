@@ -10,6 +10,10 @@ block content
 				textarea.form-control(rows="5", ng-model="mc.endpointsInput", ng-keypress="mc.endpointsInputKeypress($event)")
 				span.text-danger.hidden(ng-class="{hidden: !mc.errorMsg}") {{mc.errorMsg}}
 				span.help-block Enter CSV of endpoint label and url.
+			.checkbox.
+				<label>
+					<input type="checkbox" ng-model="mc.useGzip"> Accept gzip
+				</label>
 			button.btn.btn-primary(type="submit", ng-disabled="mc.submitInProgress") OK
 			img#loadinfo.hidden(src="/images/loadinfo.gif", ng-class="{hidden: !mc.submitInProgress}")
 

@@ -1,5 +1,13 @@
 angular.module('chunkScatter').factory('chunkGraphDataFetcher', function($http) {
-	function format(endpointsInput) {
+	function fetch(endpointsInput, useGzip) {
+		var data = {
+			endpoints: formatEndpoints(endpointsInput),
+			useGzip: useGzip
+		};
+		return $http.post('/go', data);
+	}
+
+	function formatEndpoints(endpointsInput) {
 		return endpointsInput.trim().split('\n').map(function(endpoint, ix) {
 			endpoint = endpoint.trim().split(',');
 			endpoint = {
@@ -14,8 +22,6 @@ angular.module('chunkScatter').factory('chunkGraphDataFetcher', function($http) 
 	}
 
 	return {
-		fetch: function(endpointsInput) {
-			return $http.post('/go', format(endpointsInput));
-		}
+		fetch: fetch
 	}
 });

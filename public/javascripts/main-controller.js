@@ -6,10 +6,11 @@ angular.module('chunkScatter').controller('MainController', function($scope, chu
 	this.errorMsg = '';
 	this.chartData = null;
 	this.chartImageUri = '';
+	this.useGzip = false;
 
 	this.submit = function() {
 		mc.submitInProgress = true;
-		chunkGraphDataFetcher.fetch(mc.endpointsInput)
+		chunkGraphDataFetcher.fetch(mc.endpointsInput, mc.useGzip)
 			.then(setChartData, setErrorMsg)
 			.finally(function() { mc.submitInProgress = false; });
 	};
